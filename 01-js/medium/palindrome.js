@@ -7,6 +7,21 @@
 */
 
 function isPalindrome(str) {
+  let start_idx = 0
+  let end_idx = str.length - 1
+  while(start_idx < end_idx){
+    if(str[start_idx].toLowerCase() == str[start_idx].toUpperCase()){
+      start_idx++;
+      continue
+    }
+    if(str[end_idx].toLowerCase() == str[end_idx].toUpperCase()){
+      end_idx--;
+      continue
+    }
+    if(str[start_idx++].toLowerCase()!=str[end_idx--].toLowerCase()){
+      return false
+    }
+  }
   return true;
 }
 
